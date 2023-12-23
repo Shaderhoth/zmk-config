@@ -93,6 +93,10 @@
 &kp LCTRL  &kp Z   &kp X     &kp C      &kp V   &kp B      &to 0           &trans     &kp N          &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp BSLH
                    &kp LEFT  &kp RIGHT  &mo 5   &kp SPACE  &kp LEFT_WIN    &kp ENTER  &kp BACKSPACE  &mo 5   &kp UP     &kp DOWN
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
+                <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
         };
 
         flipped {
