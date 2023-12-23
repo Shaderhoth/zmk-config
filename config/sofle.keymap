@@ -47,7 +47,7 @@
         };
 
         symbols {
-            display-name = "lower";
+            display-name = "sym";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
@@ -71,7 +71,7 @@
         };
 
         navigation {
-            display-name = "raise";
+            display-name = "nav";
 
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
@@ -94,6 +94,7 @@
         };
 
         layer_3 {
+            display-name = "game";
             bindings = <
 &kp ESC        &kp N1  &kp N2     &kp N3    &kp N4     &kp N5                        &trans  &trans  &trans  &trans  &trans  &trans
 &kp BACKSPACE  &trans  &mkp LCLK  &kp UP    &mkp RCLK  &trans                        &trans  &trans  &trans  &trans  &trans  &trans
@@ -102,10 +103,13 @@
                        &trans     &trans    &trans     &kp SPACE  &kp RET    &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = 
+                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         normal {
+            display-name = "norm";
             bindings = <
 &kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
 &kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                          &kp Y   &kp U   &kp I      &kp O     &kp P     &kp EQUAL
@@ -116,6 +120,8 @@
         };
 
         flipped {
+            display-name = "flip";
+
             bindings = <
 &kp MINUS  &kp N0    &kp N9    &kp N8     &kp N7  &kp N6                         &kp N5  &kp N4     &kp N3    &kp N2    &kp N1  &kp ESC
 &kp EQUAL  &kp P     &kp O     &kp I      &kp U   &kp Y                          &kp T   &kp R      &kp E     &kp W     &kp Q   &kp TAB
@@ -123,6 +129,10 @@
 &kp BSLH   &kp FSLH  &kp DOT   &kp COMMA  &kp M   &kp N   &to 0       &trans     &kp B   &kp V      &kp C     &kp X     &kp Z   &kp LSHFT
                      &kp LGUI  &kp DOWN   &kp UP  &trans  &kp BSPC    &kp SPACE  &trans  &kp RIGHT  &kp LEFT  &kp LALT
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
     };
 };
