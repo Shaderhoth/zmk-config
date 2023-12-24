@@ -6,10 +6,10 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/ext_power.h>
-
+#include <dt-bindings/zmk/keys.h>
 
 / {
     // Activate ADJUST layer by pressing raise and lower
@@ -54,11 +54,11 @@
         navigation {
             display-name = "nav";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans     &trans       &trans    &trans         &trans   &trans
-&trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                            &kp PG_UP  &kp HOME     &kp UP    &kp END        &kp N0   &trans
-&trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                          &kp PG_DN  &kp LEFT     &kp DOWN  &kp RIGHT      &kp DEL  &kp BSPC
-&trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans     &trans   &trans     &kp PAGE_UP  &trans    &kp PAGE_DOWN  &trans   &trans
-                          &kp LGUI      &kp LALT      &trans        &trans        &kp DEL    &kp RET  &trans     &trans       &kp RALT  &kp RGUI
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &trans     &trans       &trans    &trans         &trans   &bl BL_INC
+&ext_power EP_TOG  &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                            &kp PG_UP  &kp HOME     &kp UP    &kp END        &kp N0   &bl BL_DEC
+&bl BL_TOG         &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                          &kp PG_DN  &kp LEFT     &kp DOWN  &kp RIGHT      &kp DEL  &kp BSPC
+&bl BL_CYCLE       &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans     &trans   &trans     &kp PAGE_UP  &trans    &kp PAGE_DOWN  &trans   &trans
+                                 &kp LGUI      &kp LALT      &trans        &trans        &kp DEL    &kp RET  &trans     &trans       &kp RALT  &kp RGUI
             >;
 
             sensor-bindings =
